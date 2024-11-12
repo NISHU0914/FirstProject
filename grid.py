@@ -29,9 +29,15 @@ class Grid:
     def clear_rows(self,row):
         for column in range(self.num_cols):
             self.grid[row][column] = 0
+
     def move_row_down(self, row, num_rows):
-        for column in range(self.num_cols):
-            if self.grid[row+num_rows][column] == self.grid[row][column]:
+        # Check if the target row is within bounds
+        if row + num_rows < self.num_rows:
+            # Move the row down by copying its contents
+            for column in range(self.num_cols):
+                self.grid[row + num_rows][column] = self.grid[row][column]
+            # Clear the original row
+            for column in range(self.num_cols):
                 self.grid[row][column] = 0
     def clear_full_rows(self):
         completed=0
