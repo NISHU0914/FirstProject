@@ -1,3 +1,4 @@
+#this class is created by Amisha
 class colors:
     dark_grey = (26, 31, 40)
     green = (47, 230, 23)
