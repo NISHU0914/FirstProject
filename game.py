@@ -38,7 +38,7 @@ class Game:
         if self.block_inside()==False or self.block_fits()==False:
             self.current_block.move(-1,0)
             self.lock_block()
-    def lock_block(self):
+    def lock_block(self):#this function is created by nishu
         tiles=self.current_block.get_cell_positions()
         for position in tiles:
             self.grid.grid[position.row][position.column]=self.current_block.id
@@ -48,7 +48,7 @@ class Game:
         self.update_score(rows_cleared,0)
         if self.block_fits()==False:
             self.game_over=True
-    def block_fits(self):
+    def block_fits(self):#this function is created by nishu
         tiles=self.current_block.get_cell_positions()
         for tile in tiles:
             if self.grid.is_empty(tile.row,tile.column)==False:
